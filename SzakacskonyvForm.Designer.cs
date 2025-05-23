@@ -30,18 +30,18 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvEtelek = new DataGridView();
-            lblUI001 = new Label();
-            txtKereses = new TextBox();
-            pnlElkeszites = new Panel();
-            rtbElkeszites = new RichTextBox();
-            lblUI002 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            colElkeszites = new DataGridViewTextBoxColumn();
+            lblUI001 = new Label();
+            txtKereses = new TextBox();
+            pnlElkeszites = new Panel();
+            rtbElkeszites = new RichTextBox();
+            lblUI002 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEtelek).BeginInit();
             pnlElkeszites.SuspendLayout();
             SuspendLayout();
@@ -63,7 +63,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvEtelek.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvEtelek.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEtelek.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dgvEtelek.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, colElkeszites });
             dgvEtelek.Location = new Point(24, 68);
             dgvEtelek.MultiSelect = false;
             dgvEtelek.Name = "dgvEtelek";
@@ -71,57 +71,6 @@
             dgvEtelek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEtelek.Size = new Size(929, 275);
             dgvEtelek.TabIndex = 0;
-            // 
-            // lblUI001
-            // 
-            lblUI001.AutoSize = true;
-            lblUI001.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblUI001.Location = new Point(24, 24);
-            lblUI001.Margin = new Padding(15);
-            lblUI001.Name = "lblUI001";
-            lblUI001.Size = new Size(70, 21);
-            lblUI001.TabIndex = 1;
-            lblUI001.Text = "keresés:";
-            // 
-            // txtKereses
-            // 
-            txtKereses.Location = new Point(115, 21);
-            txtKereses.Margin = new Padding(15);
-            txtKereses.Name = "txtKereses";
-            txtKereses.Size = new Size(838, 29);
-            txtKereses.TabIndex = 2;
-            // 
-            // pnlElkeszites
-            // 
-            pnlElkeszites.BackColor = Color.PaleVioletRed;
-            pnlElkeszites.Controls.Add(rtbElkeszites);
-            pnlElkeszites.Controls.Add(lblUI002);
-            pnlElkeszites.Location = new Point(24, 361);
-            pnlElkeszites.Margin = new Padding(15);
-            pnlElkeszites.Name = "pnlElkeszites";
-            pnlElkeszites.Size = new Size(929, 180);
-            pnlElkeszites.TabIndex = 3;
-            // 
-            // rtbElkeszites
-            // 
-            rtbElkeszites.BackColor = Color.LightPink;
-            rtbElkeszites.Location = new Point(123, 30);
-            rtbElkeszites.Margin = new Padding(15, 30, 30, 30);
-            rtbElkeszites.Name = "rtbElkeszites";
-            rtbElkeszites.Size = new Size(776, 120);
-            rtbElkeszites.TabIndex = 2;
-            rtbElkeszites.Text = "";
-            // 
-            // lblUI002
-            // 
-            lblUI002.AutoSize = true;
-            lblUI002.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblUI002.Location = new Point(15, 30);
-            lblUI002.Margin = new Padding(15, 5, 5, 5);
-            lblUI002.Name = "lblUI002";
-            lblUI002.Size = new Size(88, 21);
-            lblUI002.TabIndex = 1;
-            lblUI002.Text = "elkészítés:";
             // 
             // Column1
             // 
@@ -159,11 +108,63 @@
             Column6.HeaderText = "mennyiség egység";
             Column6.Name = "Column6";
             // 
-            // Column7
+            // colElkeszites
             // 
-            Column7.HeaderText = "elkészítés";
-            Column7.Name = "Column7";
-            Column7.Visible = false;
+            colElkeszites.HeaderText = "elkészítés";
+            colElkeszites.Name = "colElkeszites";
+            colElkeszites.Visible = false;
+            // 
+            // lblUI001
+            // 
+            lblUI001.AutoSize = true;
+            lblUI001.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblUI001.Location = new Point(24, 24);
+            lblUI001.Margin = new Padding(15);
+            lblUI001.Name = "lblUI001";
+            lblUI001.Size = new Size(70, 21);
+            lblUI001.TabIndex = 1;
+            lblUI001.Text = "keresés:";
+            // 
+            // txtKereses
+            // 
+            txtKereses.Location = new Point(115, 21);
+            txtKereses.Margin = new Padding(15);
+            txtKereses.Name = "txtKereses";
+            txtKereses.Size = new Size(838, 29);
+            txtKereses.TabIndex = 2;
+            // 
+            // pnlElkeszites
+            // 
+            pnlElkeszites.BackColor = Color.PaleVioletRed;
+            pnlElkeszites.Controls.Add(rtbElkeszites);
+            pnlElkeszites.Controls.Add(lblUI002);
+            pnlElkeszites.Location = new Point(24, 361);
+            pnlElkeszites.Margin = new Padding(15);
+            pnlElkeszites.Name = "pnlElkeszites";
+            pnlElkeszites.Size = new Size(929, 180);
+            pnlElkeszites.TabIndex = 3;
+            // 
+            // rtbElkeszites
+            // 
+            rtbElkeszites.BackColor = Color.LightPink;
+            rtbElkeszites.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            rtbElkeszites.Location = new Point(123, 30);
+            rtbElkeszites.Margin = new Padding(15, 30, 30, 30);
+            rtbElkeszites.Name = "rtbElkeszites";
+            rtbElkeszites.Size = new Size(776, 120);
+            rtbElkeszites.TabIndex = 2;
+            rtbElkeszites.Text = "";
+            // 
+            // lblUI002
+            // 
+            lblUI002.AutoSize = true;
+            lblUI002.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblUI002.Location = new Point(15, 30);
+            lblUI002.Margin = new Padding(15, 5, 5, 5);
+            lblUI002.Name = "lblUI002";
+            lblUI002.Size = new Size(88, 21);
+            lblUI002.TabIndex = 1;
+            lblUI002.Text = "elkészítés:";
             // 
             // SzakacskonyvForm
             // 
@@ -200,6 +201,6 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn colElkeszites;
     }
 }
